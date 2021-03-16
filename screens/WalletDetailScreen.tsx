@@ -308,7 +308,7 @@ const WalletDetailScreen = ({
           <ButtonGroup>
             <Button
               onPress={() =>
-                navigation.navigate("RequestSetup", {
+                navigation.navigate("SendSetup", {
                   symbol: ticker,
                   tokenId
                 })
@@ -317,7 +317,7 @@ const WalletDetailScreen = ({
             />
             <Button
               onPress={() =>
-                navigation.navigate("SendSetup", {
+                navigation.navigate("RequestSetup", {
                   tokenId
                 })
               }

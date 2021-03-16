@@ -33,7 +33,7 @@
     "RequestScreen": {
       "Requesting": "Requesting",
       "Copied_to_clipboard": "Copied to clipboard",
-      "Amount Required": "Amount Required"
+      "Amount_Required": "Amount Required"
     },
     "ReceiveScreen": {
       "Msg_Scan_public": "Scan a public key below to receive funds. Tap on a QR code to copy the address.",
@@ -61,7 +61,9 @@
       "Transaction_History": "Transaction History (max 30)",
       "Transaction_history_updating": "Transaction history updating...",
       "Msg_take_few_minutes": "This may take a few minutes.",
-      "Full_History": "Full History"
+      "Full_History": "Full History",
+      "Btn_text_Send": "Send",
+      "Btn_text_Request": "Request"
     },
     "ContactUsScreen": {
       "Msg_we_hope": "We hope you are enjoying Badger Wallet",
@@ -125,7 +127,7 @@
       "To_Address": "To Address",
       "SwipeButton_labelAction": "To Send",
       "SwipeButton_labelRelease": "Release to send",
-      "labelHalfway": "Keep going",
+      "SwipeButton_labelHalfway": "Keep going",
       "Button_Cancel": "Cancel Transaction"
     },
     "SendSetupScreen": {
