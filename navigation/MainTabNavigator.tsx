@@ -14,6 +14,7 @@ import ReceiveScreen from "../screens/ReceiveScreen";
 import LogoutScreen from "../screens/LogoutScreen";
 import ContactUsScreen from "../screens/ContactUsScreen";
 import SelectCurrencyScreen from "../screens/SelectCurrencyScreen";
+import SelectLanguagesScreen from "../screens/SelectLanguagesScreen";
 import RequestScreen from "../screens/RequestScreen";
 import FAQScreen from "../screens/FAQScreen";
 import KeySweepScreen from "../screens/KeySweepScreen";
@@ -24,6 +25,9 @@ import { ViewPrivacyNoticeScreen } from "../screens/PrivacyNoticeScreen";
 import SendStack from "./SendStack";
 
 import { spaceBadger as theme } from "../themes/spaceBadger";
+
+import lang from "../_locales/index";
+var tran = new lang("MainTabNavigator");
 
 const HomeStack = createStackNavigator(
   {
@@ -45,7 +49,7 @@ const HomeStack = createStackNavigator(
     RequestSetup: {
       screen: RequestScreen,
       navigationOptions: {
-        title: "Request"
+        title: tran.getStr("Request")
       }
     }
   },
@@ -71,7 +75,7 @@ const ReceiveStack = createStackNavigator(
     Receive: {
       screen: ReceiveScreen,
       navigationOptions: {
-        title: "Receive"
+        title: tran.getStr("Receive")
       }
     }
   },
@@ -85,43 +89,49 @@ const MenuStack = createStackNavigator(
     Menu: {
       screen: MenuScreen,
       navigationOptions: {
-        title: "Menu"
+        title: tran.getStr("Menu")
       }
     },
     ViewSeedPhrase: {
       screen: ViewSeedScreen,
       navigationOptions: {
-        title: "Seed Phrase"
+        title: tran.getStr("Seed_Phrase")
       }
     },
     FAQScreen: {
       screen: FAQScreen,
       navigationOptions: {
-        title: "F.A.Q."
+        title: tran.getStr("F.A.Q.")
       }
     },
     SweepScreen: {
       screen: KeySweepScreen,
       navigationOptions: {
-        title: "Sweep"
+        title: tran.getStr("Sweep")
       }
     },
     ContactUsScreen: {
       screen: ContactUsScreen,
       navigationOptions: {
-        title: "Contact Us"
+        title: tran.getStr("Contact_Us")
       }
     },
     LogoutScreen: {
       screen: LogoutScreen,
       navigationOptions: {
-        title: "Logout?"
+        title: tran.getStr("Logout?")
       }
     },
     SelectCurrencyScreen: {
       screen: SelectCurrencyScreen,
       navigationOptions: {
-        title: "Select Currency"
+        title: tran.getStr("Select_Currency")
+      }
+    },
+    SelectLanguagesScreen: {
+      screen: SelectLanguagesScreen,
+      navigationOptions: {
+        title: tran.getStr("Select_Languages")
       }
     }
   },
