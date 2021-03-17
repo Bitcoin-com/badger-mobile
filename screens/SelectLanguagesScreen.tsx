@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { connect, ConnectedProps } from "react-redux";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { NavigationScreenProps } from "react-navigation";
+
+import { getLang, setLang } from "../data/languages/index";
 
 import {
   SafeAreaView,
@@ -12,20 +14,10 @@ import {
   TouchableOpacity
 } from "react-native";
 
-import { FullState } from "../data/store";
-import { setFiatCurrency } from "../data/prices/actions";
-import { currencySelector } from "../data/prices/selectors";
-import {
-  CurrencyCode,
-  currencyOptions,
-  currencySymbolMap,
-  currencyNameMap
-} from "../utils/currency-utils";
-
 import { T, Spacer } from "../atoms";
 
 import lang from "../_locales/index";
-var tran = new lang("SelectCurrencyScreen");
+var tran = new lang("SelectLanguagesScreen");
 
 const ScreenWrapper = styled(View)`
   height: 100%;
@@ -71,50 +63,40 @@ const CurrencyRow = ({ text, onPress, isActive }: PropsCurrencyRow) => (
 
 type PropsFromParent = NavigationScreenProps & {};
 
-const mapStateToProps = (state: FullState) => {
-  return {
-    currencyActive: currencySelector(state)
-  };
-};
+const connector = connect();
 
-const mapDispatchToProps = {
-  setFiatCurrency
-};
+type Props = PropsFromParent;
 
-const connector = connect(mapStateToProps, mapDispatchToProps);
+const Langs = require("../_locales/index.json");
 
-type PropsFromRedux = ConnectedProps<typeof connector>;
-type Props = PropsFromParent & PropsFromRedux;
+const SelectLanguagesScreen = ({ navigation }: Props) => {
+  var [currencyActive, setCurrencyActive] = useState();
 
-const SelectCurrencyScreen = ({
-  navigation,
-  currencyActive,
-  setFiatCurrency
-}: Props) => {
-  const updateFiatCurrency = (code: CurrencyCode) => {
-    setFiatCurrency(code);
-  };
+  getLang(setCurrencyActive);
 
   return (
     <SafeAreaView>
       <ScreenWrapper>
         <ActiveSection>
           <Spacer />
-          <T center>{tran.getStr("Active_Currency")} :</T>
+          <T center>{tran.getStr("Active_Languages")} :</T>
           <Spacer tiny />
           <T center weight="bold">
-            {`${currencySymbolMap[currencyActive]} ${currencyActive} - ${currencyNameMap[currencyActive]} `}
+            {` ${(getLang(setCurrencyActive), currencyActive)} `}
           </T>
           <Spacer />
         </ActiveSection>
         <ScrollView>
-          {currencyOptions.map((currencyCode: CurrencyCode) => {
+          {Langs.map((lang: any) => {
             return (
               <CurrencyRow
-                key={currencyCode}
-                text={`${currencyCode} - ${currencyNameMap[currencyCode]}`}
-                onPress={() => updateFiatCurrency(currencyCode)}
-                isActive={currencyActive === currencyCode}
+                key={lang}
+                text={`${lang.name}`}
+                onPress={() => {
+                  setCurrencyActive(lang.name);
+                  setLang(lang);
+                }}
+                isActive={currencyActive === lang.name}
               />
             );
           })}
@@ -125,4 +107,4 @@ const SelectCurrencyScreen = ({
   );
 };
 
-export default connector(SelectCurrencyScreen);
+export default connector(SelectLanguagesScreen);

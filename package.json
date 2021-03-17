@@ -19,7 +19,8 @@
     "format": "pretty-quick",
     "jetify": "npx jetify",
     "android-build": "cd android && ./gradlew assembleRelease",
-    "android-bundle": "cd android && ./gradlew bundleRelease"
+    "android-bundle": "cd android && ./gradlew bundleRelease",
+    "res": "react-native link react-native-restart"
   },
   "engines": {
     "node": ">=10.16.0"
@@ -54,6 +55,7 @@
     "react-native-qrcode-scanner": "^1.2.3",
     "react-native-qrcode-svg": "^6.0.3",
     "react-native-randombytes": "^3.5.3",
+    "react-native-restart": "^0.0.22",
     "react-native-svg": "^9.13.2",
     "react-native-swipeable": "^0.6.0",
     "react-native-vector-icons": "^6.6.0",
