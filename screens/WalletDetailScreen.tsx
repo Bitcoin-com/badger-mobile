@@ -308,20 +308,20 @@ const WalletDetailScreen = ({
           <ButtonGroup>
             <Button
               onPress={() =>
-                navigation.navigate("SendSetup", {
+                navigation.navigate("RequestSetup", {
                   symbol: ticker,
                   tokenId
                 })
               }
-              text={tran.getStr("Btn_text_Send")}
+              text={tran.getStr("Btn_text_Request")}
             />
             <Button
               onPress={() =>
-                navigation.navigate("RequestSetup", {
+                navigation.navigate("SendSetup", {
                   tokenId
                 })
               }
-              text={tran.getStr("Btn_text_Request")}
+              text={tran.getStr("Btn_text_Send")}
             />
           </ButtonGroup>
           <Spacer />

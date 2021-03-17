@@ -32,6 +32,7 @@
     },
     "RequestScreen": {
       "Requesting": "Requesting",
+      "Amount": "Amount",
       "Copied_to_clipboard": "Copied to clipboard",
       "Amount_Required": "Amount Required"
     },

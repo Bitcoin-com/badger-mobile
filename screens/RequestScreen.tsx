@@ -285,7 +285,7 @@ const RequestSetupScreen = ({
         )}
         <Spacer />
         <AmountRow>
-          <T>Amount:</T>
+          <T>{tran.getStr("Amount")}:</T>
           <View>
             <T size="small" monospace right>
               {requestAmountCryptoFormatted || "0"} {symbol}

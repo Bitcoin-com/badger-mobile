@@ -19,7 +19,8 @@
     "format": "pretty-quick",
     "jetify": "npx jetify",
     "android-build": "cd android && ./gradlew assembleRelease",
-    "android-bundle": "cd android && ./gradlew bundleRelease"
+    "android-bundle": "cd android && ./gradlew bundleRelease",
+    "res": "react-native link react-native-restart"
   },
   "engines": {
     "node": ">=10.16.0"
